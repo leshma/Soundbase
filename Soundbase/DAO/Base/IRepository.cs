@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soundbase.DAO.Base
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity>
     {
         TEntity FindById(object id);
 

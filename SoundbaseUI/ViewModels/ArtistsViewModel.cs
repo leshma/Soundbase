@@ -11,43 +11,36 @@ using System.Windows;
 
 namespace SoundbaseUI.ViewModels
 {
-    public class ArtistsViewModel : BindableBase
+    public class ArtistsViewModel : GenericViewModel<Artist>
     {
-        public ArtistsViewModel()
+        public ArtistsViewModel() : base(new ArtistDAO())
         {
             CmdSwitchView = new RelayCommand<string>(ChangeView);
             CmdRemoveSelected = new RelayCommand(RemoveSelected);
-
-            _artistDAO = new ArtistDAO();
-            Artists = new ObservableCollection<Artist>(_artistDAO.GetList());
         }
 
         //================================================================================================
-        public RelayCommand<string> CmdSwitchView { get; set; }
-
-        public RelayCommand CmdRemoveSelected { get; set; }
-
-        public void ChangeView(string view)
+        public override void ChangeView(string view)
         {
             switch (view.ToLower())
             {
-                case "addartist":
+                case "addnew":
 
                     MainWindow.MainWindowViewModel.CurrentViewModel = new SaveArtistViewModel();
                     MainWindow.MainWindowViewModel.Title = "Add an artist";
                     break;
 
-                case "updateartist":
+                case "updateselected":
 
-                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveArtistViewModel(SelectedArtist);
-                    MainWindow.MainWindowViewModel.Title = "Update an artist (ID: " + SelectedArtist.Id + ")";
+                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveArtistViewModel(SelectedElement);
+                    MainWindow.MainWindowViewModel.Title = "Update an artist (ID: " + SelectedElement.Id + ")";
                     break;
             }
         }
 
-        public void RemoveSelected()
+        public override void RemoveSelected()
         {
-            if (_artistDAO.Delete(SelectedArtist.Id))
+            if (_DAO.Delete(SelectedElement.Id))
             {
                 MessageBox.Show("Artist successfully deleted!", "Success", MessageBoxButton.OK, 
                     MessageBoxImage.Information);
@@ -58,34 +51,7 @@ namespace SoundbaseUI.ViewModels
                     MessageBoxImage.Error);
             }
 
-            Artists = new ObservableCollection<Artist>(_artistDAO.GetList());
+            Elements = new ObservableCollection<Artist>(_DAO.GetList());
         }
-
-        //================================================================================================
-        public ObservableCollection<Artist> Artists
-        {
-            get { return _artists; }
-            set
-            {
-                _artists = value;
-                OnPropertyChanged("Artists");
-            }
-        }
-
-        public Artist SelectedArtist
-        {
-            get { return _selectedArtist; }
-            set 
-            {
-                _selectedArtist = value;
-                OnPropertyChanged("SelectedArtist");
-            }
-        }
-
-        //================================================================================================
-        private ArtistDAO _artistDAO;
-
-        private ObservableCollection<Artist> _artists;
-        private Artist _selectedArtist;
     }
 }

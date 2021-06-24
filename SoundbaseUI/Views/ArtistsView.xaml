@@ -17,8 +17,8 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="10"
-                  ItemsSource="{Binding Path=Artists, UpdateSourceTrigger=PropertyChanged}" 
-                  SelectedItem="{Binding SelectedArtist, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Elements, UpdateSourceTrigger=PropertyChanged}" 
+                  SelectedItem="{Binding SelectedElement, UpdateSourceTrigger=PropertyChanged}"
                   SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False"
                   Margin="5">
             <DataGrid.Columns>
@@ -27,9 +27,9 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="5" Grid.Column="0" Margin="20,5,20,5"
-                Command="{Binding CmdSwitchView}" CommandParameter="AddArtist">Add new</Button>
+                Command="{Binding CmdSwitchView}" CommandParameter="AddNew">Add new</Button>
         <Button Grid.Row="6" Grid.Column="0" Margin="20,5,20,5"
-                Command="{Binding CmdSwitchView}" CommandParameter="UpdateArtist">Update selected</Button>
+                Command="{Binding CmdSwitchView}" CommandParameter="UpdateSelected">Update selected</Button>
         <Button Grid.Row="7" Grid.Column="0" Margin="20,5,20,5"
                 Command="{Binding CmdRemoveSelected}">Remove selected</Button>
     </Grid>

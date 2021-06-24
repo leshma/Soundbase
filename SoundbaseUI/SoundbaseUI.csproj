@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="Resources\BindableBase.cs" />
     <Compile Include="Resources\RelayCommand.cs" />
+    <Compile Include="ViewModels\GenericViewModel.cs" />
     <Compile Include="ViewModels\SaveArtistViewModel.cs" />
     <Compile Include="ViewModels\AlbumsViewModel.cs" />
     <Compile Include="ViewModels\ArtistsViewModel.cs" />
