@@ -16,11 +16,17 @@
         <DataTemplate DataType="{x:Type viewmodels:ArtistsViewModel}">
             <views:ArtistsView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:SaveArtistViewModel}">
-            <views:SaveArtistView />
+        <DataTemplate DataType="{x:Type viewmodels:ArtworksViewModel}">
+            <views:ArtworksView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveArtistViewModel}">
+            <views:SaveArtistView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveArtworkViewModel}">
+            <views:SaveArtworkView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -28,7 +34,7 @@
         <ListView HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" Padding="10" Grid.RowSpan="2">
             <Button Name="BtnAlbums" Command="{Binding CmdSwitchView}" CommandParameter="Albums" Content="Albums" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtists" Command="{Binding CmdSwitchView}" CommandParameter="Artists" Content="Artists" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnArtworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnArtworks" Command="{Binding CmdSwitchView}" CommandParameter="Artworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnBands" Content="Bands" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnComposers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnCreations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>

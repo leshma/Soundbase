@@ -32,6 +32,16 @@ namespace Soundbase.DAO
             }
         }
 
+        public override List<Artwork> GetList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.ArtworkSet
+                    .Include("Album")
+                    .ToList();
+            }
+        }
+
         //==============================================================================================
         public override bool Insert(Artwork artwork)
         {
@@ -40,7 +50,14 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            return base.Insert(artwork);
+            using (var context = new ModelSoundbaseContainer())
+            {
+                context.Entry(artwork.Album).State = System.Data.Entity.EntityState.Unchanged;
+                context.ArtworkSet.Add(artwork);
+                context.SaveChanges();
+            }
+
+            return true;
         }
     }
 }
