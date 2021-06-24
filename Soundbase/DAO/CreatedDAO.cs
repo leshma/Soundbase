@@ -56,10 +56,10 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            if (created.Performed == null || created.Performed.Count == 0)
-            {
-                return false;
-            }
+            //if (created.Performed == null || created.Performed.Count == 0)
+            //{
+            //    return false;
+            //}
 
             return base.Insert(created);
         }

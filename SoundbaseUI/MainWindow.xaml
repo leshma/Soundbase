@@ -19,6 +19,9 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveArtistViewModel}">
             <views:SaveArtistView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
+            <views:SaveAlbumView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>

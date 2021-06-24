@@ -63,10 +63,10 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            if (song.Performed == null || song.Performed.Count == 0)
-            {
-                return false;
-            }
+            //if (song.Performed == null || song.Performed.Count == 0)
+            //{
+            //    return false;
+            //}
 
             return base.Insert(song);
         }

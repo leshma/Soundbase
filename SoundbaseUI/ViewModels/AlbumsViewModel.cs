@@ -7,28 +7,51 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SoundbaseUI.ViewModels
 {
-    public class AlbumsViewModel : BindableBase
+    public class AlbumsViewModel : GenericViewModel<Album>
     {
-        public AlbumsViewModel()
+        public AlbumsViewModel() : base(new AlbumDAO())
         {
-            _albumDAO = new AlbumDAO();
-            Albums = new ObservableCollection<Album>(_albumDAO.GetList());
+            CmdSwitchView = new RelayCommand<string>(ChangeView);
+            CmdRemoveSelected = new RelayCommand(RemoveSelected);
         }
 
-        public ObservableCollection<Album> Albums
+        //================================================================================================
+        public override void ChangeView(string view)
         {
-            get { return _albums; }
-            set
+            switch (view.ToLower())
             {
-                _albums = value;
-                OnPropertyChanged("Albums");
+                case "addnew":
+
+                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveAlbumViewModel();
+                    MainWindow.MainWindowViewModel.Title = "Add an album";
+                    break;
+
+                case "updateselected":
+
+                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveAlbumViewModel(SelectedElement);
+                    MainWindow.MainWindowViewModel.Title = "Update an album (ID: " + SelectedElement.Id + ")";
+                    break;
             }
         }
 
-        private AlbumDAO _albumDAO;
-        private ObservableCollection<Album> _albums;
+        public override void RemoveSelected()
+        {
+            if (_DAO.Delete(SelectedElement.Id))
+            {
+                MessageBox.Show("Album successfully deleted!", "Success", MessageBoxButton.OK,
+                    MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Album couldn't be deleted.", "Error", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+
+            Elements = new ObservableCollection<Album>(_DAO.GetList());
+        }
     }
 }

@@ -94,10 +94,10 @@ namespace Soundbase.DAO
         //==============================================================================================
         public override bool Insert(Album album)
         {
-            if (album.Created == null || album.Created.Count == 0)
-            {
-                return false;
-            }
+            //if (album.Created == null || album.Created.Count == 0)
+            //{
+            //    return false;
+            //}
 
             return base.Insert(album);
         }
