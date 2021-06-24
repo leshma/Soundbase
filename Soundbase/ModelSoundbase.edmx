@@ -1,0 +1,1165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelSoundbase.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelSoundbaseStoreContainer">
+    <EntitySet Name="SongSet" EntityType="ModelSoundbase.Store.SongSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComposerSet" EntityType="ModelSoundbase.Store.ComposerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GenreSet" EntityType="ModelSoundbase.Store.GenreSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WriterSet" EntityType="ModelSoundbase.Store.WriterSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OfficialVideoSet" EntityType="ModelSoundbase.Store.OfficialVideoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EngineerSet" EntityType="ModelSoundbase.Store.EngineerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArtistSet" EntityType="ModelSoundbase.Store.ArtistSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BandSet" EntityType="ModelSoundbase.Store.BandSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RecordLabelSet" EntityType="ModelSoundbase.Store.RecordLabelSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArtworkSet" EntityType="ModelSoundbase.Store.ArtworkSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlbumSet" EntityType="ModelSoundbase.Store.AlbumSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CreatedSet" EntityType="ModelSoundbase.Store.CreatedSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PerformedSet" EntityType="ModelSoundbase.Store.PerformedSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EngineerSet_RecordingEngineer" EntityType="ModelSoundbase.Store.EngineerSet_RecordingEngineer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EngineerSet_MixingEngineer" EntityType="ModelSoundbase.Store.EngineerSet_MixingEngineer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SongComposer" EntityType="ModelSoundbase.Store.SongComposer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SongGenre" EntityType="ModelSoundbase.Store.SongGenre" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SongWriter" EntityType="ModelSoundbase.Store.SongWriter" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SongEngineer" EntityType="ModelSoundbase.Store.SongEngineer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArtistBand" EntityType="ModelSoundbase.Store.ArtistBand" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArtistRecordLabel" EntityType="ModelSoundbase.Store.ArtistRecordLabel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BandRecordLabel" EntityType="ModelSoundbase.Store.BandRecordLabel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PerformedCreated" EntityType="ModelSoundbase.Store.PerformedCreated" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_SongComposer_Song" Association="ModelSoundbase.Store.FK_SongComposer_Song">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="SongComposer" EntitySet="SongComposer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongComposer_Composer" Association="ModelSoundbase.Store.FK_SongComposer_Composer">
+      <End Role="Composer" EntitySet="ComposerSet" />
+      <End Role="SongComposer" EntitySet="SongComposer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongGenre_Song" Association="ModelSoundbase.Store.FK_SongGenre_Song">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="SongGenre" EntitySet="SongGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongGenre_Genre" Association="ModelSoundbase.Store.FK_SongGenre_Genre">
+      <End Role="Genre" EntitySet="GenreSet" />
+      <End Role="SongGenre" EntitySet="SongGenre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongWriter_Song" Association="ModelSoundbase.Store.FK_SongWriter_Song">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="SongWriter" EntitySet="SongWriter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongWriter_Writer" Association="ModelSoundbase.Store.FK_SongWriter_Writer">
+      <End Role="Writer" EntitySet="WriterSet" />
+      <End Role="SongWriter" EntitySet="SongWriter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongEngineer_Song" Association="ModelSoundbase.Store.FK_SongEngineer_Song">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="SongEngineer" EntitySet="SongEngineer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongEngineer_Engineer" Association="ModelSoundbase.Store.FK_SongEngineer_Engineer">
+      <End Role="Engineer" EntitySet="EngineerSet" />
+      <End Role="SongEngineer" EntitySet="SongEngineer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistBand_Artist" Association="ModelSoundbase.Store.FK_ArtistBand_Artist">
+      <End Role="Artist" EntitySet="ArtistSet" />
+      <End Role="ArtistBand" EntitySet="ArtistBand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistBand_Band" Association="ModelSoundbase.Store.FK_ArtistBand_Band">
+      <End Role="Band" EntitySet="BandSet" />
+      <End Role="ArtistBand" EntitySet="ArtistBand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistRecordLabel_Artist" Association="ModelSoundbase.Store.FK_ArtistRecordLabel_Artist">
+      <End Role="Artist" EntitySet="ArtistSet" />
+      <End Role="ArtistRecordLabel" EntitySet="ArtistRecordLabel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistRecordLabel_RecordLabel" Association="ModelSoundbase.Store.FK_ArtistRecordLabel_RecordLabel">
+      <End Role="RecordLabel" EntitySet="RecordLabelSet" />
+      <End Role="ArtistRecordLabel" EntitySet="ArtistRecordLabel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandRecordLabel_Band" Association="ModelSoundbase.Store.FK_BandRecordLabel_Band">
+      <End Role="Band" EntitySet="BandSet" />
+      <End Role="BandRecordLabel" EntitySet="BandRecordLabel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BandRecordLabel_RecordLabel" Association="ModelSoundbase.Store.FK_BandRecordLabel_RecordLabel">
+      <End Role="RecordLabel" EntitySet="RecordLabelSet" />
+      <End Role="BandRecordLabel" EntitySet="BandRecordLabel" />
+    </AssociationSet>
+    <AssociationSet Name="AlbumArtwork" Association="ModelSoundbase.Store.AlbumArtwork">
+      <End Role="Album" EntitySet="AlbumSet" />
+      <End Role="Artwork" EntitySet="ArtworkSet" />
+    </AssociationSet>
+    <AssociationSet Name="SongOfficialVideo" Association="ModelSoundbase.Store.SongOfficialVideo">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="OfficialVideo" EntitySet="OfficialVideoSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArtistCreated" Association="ModelSoundbase.Store.ArtistCreated">
+      <End Role="Artist" EntitySet="ArtistSet" />
+      <End Role="Created" EntitySet="CreatedSet" />
+    </AssociationSet>
+    <AssociationSet Name="SongPerformed" Association="ModelSoundbase.Store.SongPerformed">
+      <End Role="Song" EntitySet="SongSet" />
+      <End Role="Performed" EntitySet="PerformedSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArtistPerformed" Association="ModelSoundbase.Store.ArtistPerformed">
+      <End Role="Artist" EntitySet="ArtistSet" />
+      <End Role="Performed" EntitySet="PerformedSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerformedCreated_Performed" Association="ModelSoundbase.Store.FK_PerformedCreated_Performed">
+      <End Role="Performed" EntitySet="PerformedSet" />
+      <End Role="PerformedCreated" EntitySet="PerformedCreated" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PerformedCreated_Created" Association="ModelSoundbase.Store.FK_PerformedCreated_Created">
+      <End Role="Created" EntitySet="CreatedSet" />
+      <End Role="PerformedCreated" EntitySet="PerformedCreated" />
+    </AssociationSet>
+    <AssociationSet Name="AlbumCreated" Association="ModelSoundbase.Store.AlbumCreated">
+      <End Role="Album" EntitySet="AlbumSet" />
+      <End Role="Created" EntitySet="CreatedSet" />
+    </AssociationSet>
+    <AssociationSet Name="GenreGenre" Association="ModelSoundbase.Store.GenreGenre">
+      <End Role="SubgenreIds" EntitySet="GenreSet" />
+      <End Role="SupergenreId" EntitySet="GenreSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RecordingEngineer_inherits_Engineer" Association="ModelSoundbase.Store.FK_RecordingEngineer_inherits_Engineer">
+      <End Role="Engineer" EntitySet="EngineerSet" />
+      <End Role="RecordingEngineer" EntitySet="EngineerSet_RecordingEngineer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MixingEngineer_inherits_Engineer" Association="ModelSoundbase.Store.FK_MixingEngineer_inherits_Engineer">
+      <End Role="Engineer" EntitySet="EngineerSet" />
+      <End Role="MixingEngineer" EntitySet="EngineerSet_MixingEngineer" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SongSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComposerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GenreSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GenreId" Type="int" Nullable="false" />
+    <Property Name="GenreId1" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="WriterSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OfficialVideoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Format" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SongId" Type="int" Nullable="false" />
+    <Property Name="Song_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArtistSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BandSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RecordLabelSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArtworkSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Artist" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Format" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Album_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlbumSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CreatedSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ArtistId" Type="int" Nullable="false" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PerformedSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="SongId" Type="int" Nullable="false" />
+    <Property Name="ArtistId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineerSet_RecordingEngineer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="StudioName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EngineerSet_MixingEngineer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Awards" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SongComposer">
+    <Key>
+      <PropertyRef Name="Songs_Id" />
+      <PropertyRef Name="Composers_Id" />
+    </Key>
+    <Property Name="Songs_Id" Type="int" Nullable="false" />
+    <Property Name="Composers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SongGenre">
+    <Key>
+      <PropertyRef Name="Songs_Id" />
+      <PropertyRef Name="Genres_Id" />
+    </Key>
+    <Property Name="Songs_Id" Type="int" Nullable="false" />
+    <Property Name="Genres_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SongWriter">
+    <Key>
+      <PropertyRef Name="Songs_Id" />
+      <PropertyRef Name="Writers_Id" />
+    </Key>
+    <Property Name="Songs_Id" Type="int" Nullable="false" />
+    <Property Name="Writers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SongEngineer">
+    <Key>
+      <PropertyRef Name="Songs_Id" />
+      <PropertyRef Name="Engineers_Id" />
+    </Key>
+    <Property Name="Songs_Id" Type="int" Nullable="false" />
+    <Property Name="Engineers_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArtistBand">
+    <Key>
+      <PropertyRef Name="Artists_Id" />
+      <PropertyRef Name="Bands_Id" />
+    </Key>
+    <Property Name="Artists_Id" Type="int" Nullable="false" />
+    <Property Name="Bands_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArtistRecordLabel">
+    <Key>
+      <PropertyRef Name="Artists_Id" />
+      <PropertyRef Name="RecordLabels_Id" />
+    </Key>
+    <Property Name="Artists_Id" Type="int" Nullable="false" />
+    <Property Name="RecordLabels_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BandRecordLabel">
+    <Key>
+      <PropertyRef Name="Bands_Id" />
+      <PropertyRef Name="RecordLabels_Id" />
+    </Key>
+    <Property Name="Bands_Id" Type="int" Nullable="false" />
+    <Property Name="RecordLabels_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PerformedCreated">
+    <Key>
+      <PropertyRef Name="Performed_Id" />
+      <PropertyRef Name="Created_Id" />
+    </Key>
+    <Property Name="Performed_Id" Type="int" Nullable="false" />
+    <Property Name="Created_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AlbumArtwork">
+    <End Role="Album" Type="ModelSoundbase.Store.AlbumSet" Multiplicity="1" />
+    <End Role="Artwork" Type="ModelSoundbase.Store.ArtworkSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Artwork">
+        <PropertyRef Name="Album_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SongOfficialVideo">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="OfficialVideo" Type="ModelSoundbase.Store.OfficialVideoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OfficialVideo">
+        <PropertyRef Name="Song_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtistCreated">
+    <End Role="Artist" Type="ModelSoundbase.Store.ArtistSet" Multiplicity="1" />
+    <End Role="Created" Type="ModelSoundbase.Store.CreatedSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Created">
+        <PropertyRef Name="ArtistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SongPerformed">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="Performed" Type="ModelSoundbase.Store.PerformedSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Performed">
+        <PropertyRef Name="SongId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArtistPerformed">
+    <End Role="Artist" Type="ModelSoundbase.Store.ArtistSet" Multiplicity="1" />
+    <End Role="Performed" Type="ModelSoundbase.Store.PerformedSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Performed">
+        <PropertyRef Name="ArtistId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlbumCreated">
+    <End Role="Album" Type="ModelSoundbase.Store.AlbumSet" Multiplicity="1" />
+    <End Role="Created" Type="ModelSoundbase.Store.CreatedSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Created">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GenreGenre">
+    <End Role="SubgenreIds" Type="ModelSoundbase.Store.GenreSet" Multiplicity="0..1" />
+    <End Role="SupergenreId" Type="ModelSoundbase.Store.GenreSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubgenreIds">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SupergenreId">
+        <PropertyRef Name="GenreId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongComposer_Song">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="SongComposer" Type="ModelSoundbase.Store.SongComposer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongComposer">
+        <PropertyRef Name="Songs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongComposer_Composer">
+    <End Role="SongComposer" Type="ModelSoundbase.Store.SongComposer" Multiplicity="*" />
+    <End Role="Composer" Type="ModelSoundbase.Store.ComposerSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Composer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongComposer">
+        <PropertyRef Name="Composers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongGenre_Song">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="SongGenre" Type="ModelSoundbase.Store.SongGenre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongGenre">
+        <PropertyRef Name="Songs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongGenre_Genre">
+    <End Role="SongGenre" Type="ModelSoundbase.Store.SongGenre" Multiplicity="*" />
+    <End Role="Genre" Type="ModelSoundbase.Store.GenreSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongGenre">
+        <PropertyRef Name="Genres_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongWriter_Song">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="SongWriter" Type="ModelSoundbase.Store.SongWriter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongWriter">
+        <PropertyRef Name="Songs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongWriter_Writer">
+    <End Role="SongWriter" Type="ModelSoundbase.Store.SongWriter" Multiplicity="*" />
+    <End Role="Writer" Type="ModelSoundbase.Store.WriterSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Writer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongWriter">
+        <PropertyRef Name="Writers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongEngineer_Song">
+    <End Role="Song" Type="ModelSoundbase.Store.SongSet" Multiplicity="1" />
+    <End Role="SongEngineer" Type="ModelSoundbase.Store.SongEngineer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongEngineer">
+        <PropertyRef Name="Songs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongEngineer_Engineer">
+    <End Role="SongEngineer" Type="ModelSoundbase.Store.SongEngineer" Multiplicity="*" />
+    <End Role="Engineer" Type="ModelSoundbase.Store.EngineerSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Engineer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SongEngineer">
+        <PropertyRef Name="Engineers_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistBand_Artist">
+    <End Role="Artist" Type="ModelSoundbase.Store.ArtistSet" Multiplicity="1" />
+    <End Role="ArtistBand" Type="ModelSoundbase.Store.ArtistBand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistBand">
+        <PropertyRef Name="Artists_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistBand_Band">
+    <End Role="ArtistBand" Type="ModelSoundbase.Store.ArtistBand" Multiplicity="*" />
+    <End Role="Band" Type="ModelSoundbase.Store.BandSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Band">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistBand">
+        <PropertyRef Name="Bands_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistRecordLabel_Artist">
+    <End Role="Artist" Type="ModelSoundbase.Store.ArtistSet" Multiplicity="1" />
+    <End Role="ArtistRecordLabel" Type="ModelSoundbase.Store.ArtistRecordLabel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistRecordLabel">
+        <PropertyRef Name="Artists_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistRecordLabel_RecordLabel">
+    <End Role="ArtistRecordLabel" Type="ModelSoundbase.Store.ArtistRecordLabel" Multiplicity="*" />
+    <End Role="RecordLabel" Type="ModelSoundbase.Store.RecordLabelSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RecordLabel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArtistRecordLabel">
+        <PropertyRef Name="RecordLabels_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandRecordLabel_Band">
+    <End Role="Band" Type="ModelSoundbase.Store.BandSet" Multiplicity="1" />
+    <End Role="BandRecordLabel" Type="ModelSoundbase.Store.BandRecordLabel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Band">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandRecordLabel">
+        <PropertyRef Name="Bands_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BandRecordLabel_RecordLabel">
+    <End Role="BandRecordLabel" Type="ModelSoundbase.Store.BandRecordLabel" Multiplicity="*" />
+    <End Role="RecordLabel" Type="ModelSoundbase.Store.RecordLabelSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="RecordLabel">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BandRecordLabel">
+        <PropertyRef Name="RecordLabels_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerformedCreated_Performed">
+    <End Role="Performed" Type="ModelSoundbase.Store.PerformedSet" Multiplicity="1" />
+    <End Role="PerformedCreated" Type="ModelSoundbase.Store.PerformedCreated" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Performed">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PerformedCreated">
+        <PropertyRef Name="Performed_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PerformedCreated_Created">
+    <End Role="PerformedCreated" Type="ModelSoundbase.Store.PerformedCreated" Multiplicity="*" />
+    <End Role="Created" Type="ModelSoundbase.Store.CreatedSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Created">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PerformedCreated">
+        <PropertyRef Name="Created_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RecordingEngineer_inherits_Engineer">
+    <End Role="Engineer" Type="ModelSoundbase.Store.EngineerSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RecordingEngineer" Type="ModelSoundbase.Store.EngineerSet_RecordingEngineer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Engineer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RecordingEngineer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MixingEngineer_inherits_Engineer">
+    <End Role="Engineer" Type="ModelSoundbase.Store.EngineerSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MixingEngineer" Type="ModelSoundbase.Store.EngineerSet_MixingEngineer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Engineer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MixingEngineer">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelSoundbase" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelSoundbaseContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SongSet" EntityType="ModelSoundbase.Song" />
+          <EntitySet Name="ComposerSet" EntityType="ModelSoundbase.Composer" />
+          <AssociationSet Name="SongComposer" Association="ModelSoundbase.SongComposer">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="Composer" EntitySet="ComposerSet" />
+          </AssociationSet>
+          <EntitySet Name="GenreSet" EntityType="ModelSoundbase.Genre" />
+          <AssociationSet Name="SongGenre" Association="ModelSoundbase.SongGenre">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="Genre" EntitySet="GenreSet" />
+          </AssociationSet>
+          <EntitySet Name="WriterSet" EntityType="ModelSoundbase.Writer" />
+          <AssociationSet Name="SongWriter" Association="ModelSoundbase.SongWriter">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="Writer" EntitySet="WriterSet" />
+          </AssociationSet>
+          <EntitySet Name="OfficialVideoSet" EntityType="ModelSoundbase.OfficialVideo" />
+          <EntitySet Name="EngineerSet" EntityType="ModelSoundbase.Engineer" />
+          <AssociationSet Name="SongEngineer" Association="ModelSoundbase.SongEngineer">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="Engineer" EntitySet="EngineerSet" />
+          </AssociationSet>
+          <EntitySet Name="ArtistSet" EntityType="ModelSoundbase.Artist" />
+          <EntitySet Name="BandSet" EntityType="ModelSoundbase.Band" />
+          <EntitySet Name="RecordLabelSet" EntityType="ModelSoundbase.RecordLabel" />
+          <AssociationSet Name="ArtistBand" Association="ModelSoundbase.ArtistBand">
+            <End Role="Artist" EntitySet="ArtistSet" />
+            <End Role="Band" EntitySet="BandSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArtistRecordLabel" Association="ModelSoundbase.ArtistRecordLabel">
+            <End Role="Artist" EntitySet="ArtistSet" />
+            <End Role="RecordLabel" EntitySet="RecordLabelSet" />
+          </AssociationSet>
+          <AssociationSet Name="BandRecordLabel" Association="ModelSoundbase.BandRecordLabel">
+            <End Role="Band" EntitySet="BandSet" />
+            <End Role="RecordLabel" EntitySet="RecordLabelSet" />
+          </AssociationSet>
+          <EntitySet Name="ArtworkSet" EntityType="ModelSoundbase.Artwork" />
+          <EntitySet Name="AlbumSet" EntityType="ModelSoundbase.Album" />
+          <AssociationSet Name="AlbumArtwork" Association="ModelSoundbase.AlbumArtwork">
+            <End Role="Album" EntitySet="AlbumSet" />
+            <End Role="Artwork" EntitySet="ArtworkSet" />
+          </AssociationSet>
+          <AssociationSet Name="SongOfficialVideo" Association="ModelSoundbase.SongOfficialVideo">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="OfficialVideo" EntitySet="OfficialVideoSet" />
+          </AssociationSet>
+          <EntitySet Name="CreatedSet" EntityType="ModelSoundbase.Created" />
+          <EntitySet Name="PerformedSet" EntityType="ModelSoundbase.Performed" />
+          <AssociationSet Name="ArtistCreated" Association="ModelSoundbase.ArtistCreated">
+            <End Role="Artist" EntitySet="ArtistSet" />
+            <End Role="Created" EntitySet="CreatedSet" />
+          </AssociationSet>
+          <AssociationSet Name="SongPerformed" Association="ModelSoundbase.SongPerformed">
+            <End Role="Song" EntitySet="SongSet" />
+            <End Role="Performed" EntitySet="PerformedSet" />
+          </AssociationSet>
+          <AssociationSet Name="ArtistPerformed" Association="ModelSoundbase.ArtistPerformed">
+            <End Role="Artist" EntitySet="ArtistSet" />
+            <End Role="Performed" EntitySet="PerformedSet" />
+          </AssociationSet>
+          <AssociationSet Name="PerformedCreated" Association="ModelSoundbase.PerformedCreated">
+            <End Role="Performed" EntitySet="PerformedSet" />
+            <End Role="Created" EntitySet="CreatedSet" />
+          </AssociationSet>
+          <AssociationSet Name="AlbumCreated" Association="ModelSoundbase.AlbumCreated">
+            <End Role="Album" EntitySet="AlbumSet" />
+            <End Role="Created" EntitySet="CreatedSet" />
+          </AssociationSet>
+          <AssociationSet Name="GenreGenre" Association="ModelSoundbase.GenreGenre">
+            <End Role="SubgenreIds" EntitySet="GenreSet" />
+            <End Role="SupergenreId" EntitySet="GenreSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Duration" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Composers" Relationship="ModelSoundbase.SongComposer" FromRole="Song" ToRole="Composer" />
+          <NavigationProperty Name="Genres" Relationship="ModelSoundbase.SongGenre" FromRole="Song" ToRole="Genre" />
+          <NavigationProperty Name="Writers" Relationship="ModelSoundbase.SongWriter" FromRole="Song" ToRole="Writer" />
+          <NavigationProperty Name="Engineers" Relationship="ModelSoundbase.SongEngineer" FromRole="Song" ToRole="Engineer" />
+          <NavigationProperty Name="OfficialVideo" Relationship="ModelSoundbase.SongOfficialVideo" FromRole="Song" ToRole="OfficialVideo" />
+          <NavigationProperty Name="Performed" Relationship="ModelSoundbase.SongPerformed" FromRole="Song" ToRole="Performed" />
+        </EntityType>
+        <EntityType Name="Composer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Songs" Relationship="ModelSoundbase.SongComposer" FromRole="Composer" ToRole="Song" />
+        </EntityType>
+        <Association Name="SongComposer">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="*" />
+          <End Type="ModelSoundbase.Composer" Role="Composer" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Songs" Relationship="ModelSoundbase.SongGenre" FromRole="Genre" ToRole="Song" />
+          <Property Name="GenreId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Subgenres" Relationship="ModelSoundbase.GenreGenre" FromRole="SubgenreIds" ToRole="SupergenreId" />
+          <NavigationProperty Name="Supergenre" Relationship="ModelSoundbase.GenreGenre" FromRole="SupergenreId" ToRole="SubgenreIds" />
+          <Property Name="GenreId1" Type="Int32" Nullable="true" />
+          </EntityType>
+        <Association Name="SongGenre">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="*" />
+          <End Type="ModelSoundbase.Genre" Role="Genre" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Writer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Songs" Relationship="ModelSoundbase.SongWriter" FromRole="Writer" ToRole="Song" />
+        </EntityType>
+        <Association Name="SongWriter">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="*" />
+          <End Type="ModelSoundbase.Writer" Role="Writer" Multiplicity="*" />
+        </Association>
+        <EntityType Name="OfficialVideo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Format" Type="String" Nullable="false" />
+          <Property Name="SongId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Song" Relationship="ModelSoundbase.SongOfficialVideo" FromRole="OfficialVideo" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Engineer" Abstract="true">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Songs" Relationship="ModelSoundbase.SongEngineer" FromRole="Engineer" ToRole="Song" />
+        </EntityType>
+        <Association Name="SongEngineer">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="*" />
+          <End Type="ModelSoundbase.Engineer" Role="Engineer" Multiplicity="*" />
+        </Association>
+        <EntityType Name="RecordingEngineer" BaseType="ModelSoundbase.Engineer" >
+          <Property Name="StudioName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MixingEngineer" BaseType="ModelSoundbase.Engineer" >
+          <Property Name="Awards" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Bands" Relationship="ModelSoundbase.ArtistBand" FromRole="Artist" ToRole="Band" />
+          <NavigationProperty Name="RecordLabels" Relationship="ModelSoundbase.ArtistRecordLabel" FromRole="Artist" ToRole="RecordLabel" />
+          <NavigationProperty Name="Created" Relationship="ModelSoundbase.ArtistCreated" FromRole="Artist" ToRole="Created" />
+          <NavigationProperty Name="Performed" Relationship="ModelSoundbase.ArtistPerformed" FromRole="Artist" ToRole="Performed" />
+        </EntityType>
+        <EntityType Name="Band">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artists" Relationship="ModelSoundbase.ArtistBand" FromRole="Band" ToRole="Artist" />
+          <NavigationProperty Name="RecordLabels" Relationship="ModelSoundbase.BandRecordLabel" FromRole="Band" ToRole="RecordLabel" />
+        </EntityType>
+        <EntityType Name="RecordLabel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artists" Relationship="ModelSoundbase.ArtistRecordLabel" FromRole="RecordLabel" ToRole="Artist" />
+          <NavigationProperty Name="Bands" Relationship="ModelSoundbase.BandRecordLabel" FromRole="RecordLabel" ToRole="Band" />
+        </EntityType>
+        <Association Name="ArtistBand">
+          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="*" />
+          <End Type="ModelSoundbase.Band" Role="Band" Multiplicity="*" />
+        </Association>
+        <Association Name="ArtistRecordLabel">
+          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="*" />
+          <End Type="ModelSoundbase.RecordLabel" Role="RecordLabel" Multiplicity="*" />
+        </Association>
+        <Association Name="BandRecordLabel">
+          <End Type="ModelSoundbase.Band" Role="Band" Multiplicity="*" />
+          <End Type="ModelSoundbase.RecordLabel" Role="RecordLabel" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Artwork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Artist" Type="String" Nullable="false" />
+          <Property Name="Format" Type="String" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="ModelSoundbase.AlbumArtwork" FromRole="Artwork" ToRole="Album" />
+        </EntityType>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Artwork" Relationship="ModelSoundbase.AlbumArtwork" FromRole="Album" ToRole="Artwork" />
+          <NavigationProperty Name="Created" Relationship="ModelSoundbase.AlbumCreated" FromRole="Album" ToRole="Created" />
+        </EntityType>
+        <Association Name="AlbumArtwork">
+          <End Type="ModelSoundbase.Album" Role="Album" Multiplicity="1" />
+          <End Type="ModelSoundbase.Artwork" Role="Artwork" Multiplicity="0..1" />
+        </Association>
+        <Association Name="SongOfficialVideo">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="1" />
+          <End Type="ModelSoundbase.OfficialVideo" Role="OfficialVideo" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Created" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <NavigationProperty Name="Artist" Relationship="ModelSoundbase.ArtistCreated" FromRole="Created" ToRole="Artist" />
+          <Property Name="ArtistId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Performed" Relationship="ModelSoundbase.PerformedCreated" FromRole="Created" ToRole="Performed" />
+          <NavigationProperty Name="Album" Relationship="ModelSoundbase.AlbumCreated" FromRole="Created" ToRole="Album" />
+          <Property Name="AlbumId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Performed" >
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <NavigationProperty Name="Song" Relationship="ModelSoundbase.SongPerformed" FromRole="Performed" ToRole="Song" />
+          <Property Name="SongId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Artist" Relationship="ModelSoundbase.ArtistPerformed" FromRole="Performed" ToRole="Artist" />
+          <Property Name="ArtistId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Created" Relationship="ModelSoundbase.PerformedCreated" FromRole="Performed" ToRole="Created" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ArtistCreated">
+          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="1" />
+          <End Type="ModelSoundbase.Created" Role="Created" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Created">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SongPerformed">
+          <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="1" />
+          <End Type="ModelSoundbase.Performed" Role="Performed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Song">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Performed">
+              <PropertyRef Name="SongId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ArtistPerformed">
+          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="1" />
+          <End Type="ModelSoundbase.Performed" Role="Performed" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Performed">
+              <PropertyRef Name="ArtistId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PerformedCreated">
+          <End Type="ModelSoundbase.Performed" Role="Performed" Multiplicity="*" />
+          <End Type="ModelSoundbase.Created" Role="Created" Multiplicity="*" />
+        </Association>
+        <Association Name="AlbumCreated">
+          <End Type="ModelSoundbase.Album" Role="Album" Multiplicity="1" />
+          <End Type="ModelSoundbase.Created" Role="Created" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Created">
+              <PropertyRef Name="AlbumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GenreGenre">
+          <End Type="ModelSoundbase.Genre" Role="SubgenreIds" Multiplicity="0..1" />
+          <End Type="ModelSoundbase.Genre" Role="SupergenreId" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubgenreIds">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupergenreId">
+              <PropertyRef Name="GenreId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelSoundbaseStoreContainer" CdmEntityContainer="ModelSoundbaseContainer">
+    <EntitySetMapping Name="SongSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Song)">
+        <MappingFragment StoreEntitySet="SongSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComposerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Composer)">
+        <MappingFragment StoreEntitySet="ComposerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GenreSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Genre)">
+        <MappingFragment StoreEntitySet="GenreSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+          <ScalarProperty Name="GenreId1" ColumnName="GenreId1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WriterSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Writer)">
+        <MappingFragment StoreEntitySet="WriterSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OfficialVideoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.OfficialVideo)">
+        <MappingFragment StoreEntitySet="OfficialVideoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Format" ColumnName="Format" />
+          <ScalarProperty Name="SongId" ColumnName="SongId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EngineerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Engineer)">
+        <MappingFragment StoreEntitySet="EngineerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.RecordingEngineer)">
+        <MappingFragment StoreEntitySet="EngineerSet_RecordingEngineer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StudioName" ColumnName="StudioName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.MixingEngineer)">
+        <MappingFragment StoreEntitySet="EngineerSet_MixingEngineer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtistSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Artist)">
+        <MappingFragment StoreEntitySet="ArtistSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BandSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Band)">
+        <MappingFragment StoreEntitySet="BandSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecordLabelSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.RecordLabel)">
+        <MappingFragment StoreEntitySet="RecordLabelSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArtworkSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Artwork)">
+        <MappingFragment StoreEntitySet="ArtworkSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Artist" ColumnName="Artist" />
+          <ScalarProperty Name="Format" ColumnName="Format" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlbumSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Album)">
+        <MappingFragment StoreEntitySet="AlbumSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CreatedSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Created)">
+        <MappingFragment StoreEntitySet="CreatedSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+          <ScalarProperty Name="AlbumId" ColumnName="AlbumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PerformedSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSoundbase.Performed)">
+        <MappingFragment StoreEntitySet="PerformedSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SongId" ColumnName="SongId" />
+          <ScalarProperty Name="ArtistId" ColumnName="ArtistId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SongComposer" TypeName="ModelSoundbase.SongComposer" StoreEntitySet="SongComposer">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="Id" ColumnName="Songs_Id" />
+      </EndProperty>
+      <EndProperty Name="Composer">
+        <ScalarProperty Name="Id" ColumnName="Composers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongGenre" TypeName="ModelSoundbase.SongGenre" StoreEntitySet="SongGenre">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="Id" ColumnName="Songs_Id" />
+      </EndProperty>
+      <EndProperty Name="Genre">
+        <ScalarProperty Name="Id" ColumnName="Genres_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongWriter" TypeName="ModelSoundbase.SongWriter" StoreEntitySet="SongWriter">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="Id" ColumnName="Songs_Id" />
+      </EndProperty>
+      <EndProperty Name="Writer">
+        <ScalarProperty Name="Id" ColumnName="Writers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongEngineer" TypeName="ModelSoundbase.SongEngineer" StoreEntitySet="SongEngineer">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="Id" ColumnName="Songs_Id" />
+      </EndProperty>
+      <EndProperty Name="Engineer">
+        <ScalarProperty Name="Id" ColumnName="Engineers_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ArtistBand" TypeName="ModelSoundbase.ArtistBand" StoreEntitySet="ArtistBand">
+      <EndProperty Name="Artist">
+        <ScalarProperty Name="Id" ColumnName="Artists_Id" />
+      </EndProperty>
+      <EndProperty Name="Band">
+        <ScalarProperty Name="Id" ColumnName="Bands_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ArtistRecordLabel" TypeName="ModelSoundbase.ArtistRecordLabel" StoreEntitySet="ArtistRecordLabel">
+      <EndProperty Name="Artist">
+        <ScalarProperty Name="Id" ColumnName="Artists_Id" />
+      </EndProperty>
+      <EndProperty Name="RecordLabel">
+        <ScalarProperty Name="Id" ColumnName="RecordLabels_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BandRecordLabel" TypeName="ModelSoundbase.BandRecordLabel" StoreEntitySet="BandRecordLabel">
+      <EndProperty Name="Band">
+        <ScalarProperty Name="Id" ColumnName="Bands_Id" />
+      </EndProperty>
+      <EndProperty Name="RecordLabel">
+        <ScalarProperty Name="Id" ColumnName="RecordLabels_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AlbumArtwork" TypeName="ModelSoundbase.AlbumArtwork" StoreEntitySet="ArtworkSet">
+      <EndProperty Name="Album">
+        <ScalarProperty Name="Id" ColumnName="Album_Id" />
+      </EndProperty>
+      <EndProperty Name="Artwork">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongOfficialVideo" TypeName="ModelSoundbase.SongOfficialVideo" StoreEntitySet="OfficialVideoSet">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="Id" ColumnName="Song_Id" />
+      </EndProperty>
+      <EndProperty Name="OfficialVideo">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PerformedCreated" TypeName="ModelSoundbase.PerformedCreated" StoreEntitySet="PerformedCreated">
+      <EndProperty Name="Performed">
+        <ScalarProperty Name="Id" ColumnName="Performed_Id" />
+      </EndProperty>
+      <EndProperty Name="Created">
+        <ScalarProperty Name="Id" ColumnName="Created_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

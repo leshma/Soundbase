@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1abe3d96f5124c1c91c95ae13dfeefef" Name="Diagram1" ZoomLevel="83" >
+        <EntityTypeShape EntityType="ModelSoundbase.Song" Width="1.5" PointX="5.875" PointY="5.375" />
+        <EntityTypeShape EntityType="ModelSoundbase.Composer" Width="1.5" PointX="5.5" PointY="9.5" />
+        <AssociationConnector Association="ModelSoundbase.SongComposer" />
+        <EntityTypeShape EntityType="ModelSoundbase.Genre" Width="1.5" PointX="3.25" PointY="7.375" />
+        <AssociationConnector Association="ModelSoundbase.SongGenre" />
+        <EntityTypeShape EntityType="ModelSoundbase.Writer" Width="1.5" PointX="2.125" PointY="4.625" />
+        <AssociationConnector Association="ModelSoundbase.SongWriter" />
+        <EntityTypeShape EntityType="ModelSoundbase.OfficialVideo" Width="1.5" PointX="3.875" PointY="2.75" />
+        <EntityTypeShape EntityType="ModelSoundbase.Engineer" Width="1.5" PointX="6.125" PointY="2.125" />
+        <AssociationConnector Association="ModelSoundbase.SongEngineer" />
+        <EntityTypeShape EntityType="ModelSoundbase.RecordingEngineer" Width="1.5" PointX="4.625" PointY="0.5" />
+        <InheritanceConnector EntityType="ModelSoundbase.RecordingEngineer" />
+        <EntityTypeShape EntityType="ModelSoundbase.MixingEngineer" Width="1.5" PointX="7.75" PointY="0.625" />
+        <InheritanceConnector EntityType="ModelSoundbase.MixingEngineer" />
+        <EntityTypeShape EntityType="ModelSoundbase.Artist" Width="1.5" PointX="9.375" PointY="9.5" />
+        <EntityTypeShape EntityType="ModelSoundbase.Band" Width="1.5" PointX="9.5" PointY="12.25" />
+        <EntityTypeShape EntityType="ModelSoundbase.RecordLabel" Width="1.5" PointX="12.125" PointY="10.75" />
+        <AssociationConnector Association="ModelSoundbase.ArtistBand" />
+        <AssociationConnector Association="ModelSoundbase.ArtistRecordLabel" />
+        <AssociationConnector Association="ModelSoundbase.BandRecordLabel" />
+        <EntityTypeShape EntityType="ModelSoundbase.Artwork" Width="1.5" PointX="9.75" PointY="2" />
+        <EntityTypeShape EntityType="ModelSoundbase.Album" Width="1.5" PointX="11.125" PointY="4.625" />
+        <AssociationConnector Association="ModelSoundbase.AlbumArtwork" />
+        <AssociationConnector Association="ModelSoundbase.SongOfficialVideo" />
+        <EntityTypeShape EntityType="ModelSoundbase.Created" Width="1.5" PointX="10.75" PointY="7.25" />
+        <EntityTypeShape EntityType="ModelSoundbase.Performed" Width="1.5" PointX="8" PointY="7.125" />
+        <AssociationConnector Association="ModelSoundbase.ArtistCreated" />
+        <AssociationConnector Association="ModelSoundbase.SongPerformed" />
+        <AssociationConnector Association="ModelSoundbase.ArtistPerformed" />
+        <AssociationConnector Association="ModelSoundbase.PerformedCreated" />
+        <AssociationConnector Association="ModelSoundbase.AlbumCreated" />
+        <AssociationConnector Association="ModelSoundbase.GenreGenre" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
