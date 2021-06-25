@@ -44,6 +44,6 @@
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
                 Content="Cancel" FontSize="20"
                 Margin="10"
-                Command="{Binding CmdSwitchView}" CommandParameter="Artists"></Button>
+                Command="{Binding CmdSwitchView}" CommandParameter="Bands"></Button>
     </Grid>
 </UserControl>

@@ -65,7 +65,7 @@ namespace SoundbaseUI.ViewModels
                 MessageBox.Show("Artwork successfully added!", "Success", MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                ChangeView("albums");
+                ChangeView("artworks");
             }
             else
             {
@@ -83,7 +83,7 @@ namespace SoundbaseUI.ViewModels
                 MessageBox.Show("Artwork successfully updated!", "Success", MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                ChangeView("albums");
+                ChangeView("artworks");
             }
             else
             {

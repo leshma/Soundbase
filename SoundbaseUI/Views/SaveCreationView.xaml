@@ -40,6 +40,6 @@
         <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
                 Content="Cancel" FontSize="20"
                 Margin="20"
-                Command="{Binding CmdSwitchView}" CommandParameter="Artists"></Button>
+                Command="{Binding CmdSwitchView}" CommandParameter="Creations"></Button>
     </Grid>
 </UserControl>

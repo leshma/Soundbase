@@ -60,7 +60,7 @@ namespace SoundbaseUI.ViewModels
                 MessageBox.Show("Composer successfully added!", "Success", MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                ChangeView("artists");
+                ChangeView("composers");
             }
             else
             {
@@ -78,7 +78,7 @@ namespace SoundbaseUI.ViewModels
                 MessageBox.Show("Composer successfully updated!", "Success", MessageBoxButton.OK,
                     MessageBoxImage.Information);
 
-                ChangeView("artists");
+                ChangeView("composers");
             }
             else
             {
