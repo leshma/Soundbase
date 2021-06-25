@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/20/2021 20:59:53
+-- Date Created: 06/25/2021 12:19:03
 -- Generated from EDMX file: C:\Users\Nemanja\Desktop\Marko\School\Baze 2\Projekat\Soundbase\Soundbase\ModelSoundbase.edmx
 -- --------------------------------------------------
 
@@ -62,9 +62,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_AlbumArtwork]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ArtworkSet] DROP CONSTRAINT [FK_AlbumArtwork];
 GO
-IF OBJECT_ID(N'[dbo].[FK_GenreGenre]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[GenreSet] DROP CONSTRAINT [FK_GenreGenre];
-GO
 IF OBJECT_ID(N'[dbo].[FK_SongOfficialVideo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[OfficialVideoSet] DROP CONSTRAINT [FK_SongOfficialVideo];
 GO
@@ -85,6 +82,9 @@ IF OBJECT_ID(N'[dbo].[FK_PerformedCreated_Created]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_AlbumCreated]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CreatedSet] DROP CONSTRAINT [FK_AlbumCreated];
+GO
+IF OBJECT_ID(N'[dbo].[FK_GenreGenre]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[GenreSet] DROP CONSTRAINT [FK_GenreGenre];
 GO
 IF OBJECT_ID(N'[dbo].[FK_RecordingEngineer_inherits_Engineer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[EngineerSet_RecordingEngineer] DROP CONSTRAINT [FK_RecordingEngineer_inherits_Engineer];
@@ -261,7 +261,7 @@ GO
 CREATE TABLE [dbo].[CreatedSet] (
     [ArtistId] int  NOT NULL,
     [AlbumId] int  NOT NULL,
-    [Id] int  NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL
 );
 GO
 
@@ -269,7 +269,7 @@ GO
 CREATE TABLE [dbo].[PerformedSet] (
     [SongId] int  NOT NULL,
     [ArtistId] int  NOT NULL,
-    [Id] int  NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL
 );
 GO
 

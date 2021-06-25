@@ -222,7 +222,7 @@
     </Key>
     <Property Name="ArtistId" Type="int" Nullable="false" />
     <Property Name="AlbumId" Type="int" Nullable="false" />
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="PerformedSet">
     <Key>
@@ -230,7 +230,7 @@
     </Key>
     <Property Name="SongId" Type="int" Nullable="false" />
     <Property Name="ArtistId" Type="int" Nullable="false" />
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="EngineerSet_RecordingEngineer">
     <Key>
@@ -854,7 +854,7 @@
           <NavigationProperty Name="Performed" Relationship="ModelSoundbase.PerformedCreated" FromRole="Created" ToRole="Performed" />
           <NavigationProperty Name="Album" Relationship="ModelSoundbase.AlbumCreated" FromRole="Created" ToRole="Album" />
           <Property Name="AlbumId" Type="Int32" Nullable="false" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Performed" >
           <Key>
@@ -865,7 +865,7 @@
           <NavigationProperty Name="Artist" Relationship="ModelSoundbase.ArtistPerformed" FromRole="Performed" ToRole="Artist" />
           <Property Name="ArtistId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Created" Relationship="ModelSoundbase.PerformedCreated" FromRole="Performed" ToRole="Created" />
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="ArtistCreated">
           <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="1" />

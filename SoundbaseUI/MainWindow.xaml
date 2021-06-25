@@ -25,6 +25,12 @@
         <DataTemplate DataType="{x:Type viewmodels:ComposersViewModel}">
             <views:ComposersView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:CreationsViewModel}">
+            <views:CreationsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:MixingEngineersViewModel}">
+            <views:MixingEngineersView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -40,6 +46,12 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveComposerViewModel}">
             <views:SaveComposerView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveCreationViewModel}">
+            <views:SaveCreationView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveMixingEngineerViewModel}">
+            <views:SaveMixingEngineerView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>
@@ -49,8 +61,9 @@
             <Button Name="BtnArtworks" Command="{Binding CmdSwitchView}" CommandParameter="Artworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnBands" Command="{Binding CmdSwitchView}" CommandParameter="Bands" Content="Bands" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnComposers" Command="{Binding CmdSwitchView}" CommandParameter="Composers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnCreations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnEngineers" Content="Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnCreations" Command="{Binding CmdSwitchView}" CommandParameter="Creations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnMixingEngineers" Command="{Binding CmdSwitchView}" CommandParameter="MixingEngineers" Content="Mixing Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnRecordingEngineers" Content="Rec. Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnGenres" Content="Genres" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnOfficialVideos" Content="Official Videos" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnPerformances" Content="Performances" MinWidth="100" MaxWidth="138" Height="30"/>

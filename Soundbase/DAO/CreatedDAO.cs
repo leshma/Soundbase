@@ -18,10 +18,10 @@ namespace Soundbase.DAO
                     .Include("Album.Created")
                     .SingleOrDefault(x => x.Id == (int)id);
 
-                if (created.Album.Created.Count == 1)
-                {
-                    return false;
-                }
+                //if (created.Album.Created.Count == 1)
+                //{
+                //    return false;
+                //}
             }
 
             return base.Delete(id);
@@ -56,12 +56,15 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            //if (created.Performed == null || created.Performed.Count == 0)
-            //{
-            //    return false;
-            //}
+            using (var context = new ModelSoundbaseContainer())
+            {
+                context.Entry(created.Album).State = System.Data.Entity.EntityState.Unchanged;
+                context.Entry(created.Artist).State = System.Data.Entity.EntityState.Unchanged;
+                context.CreatedSet.Add(created);
+                context.SaveChanges();
+            }
 
-            return base.Insert(created);
+            return true;
         }
     }
 }
