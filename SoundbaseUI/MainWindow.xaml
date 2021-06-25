@@ -31,6 +31,9 @@
         <DataTemplate DataType="{x:Type viewmodels:MixingEngineersViewModel}">
             <views:MixingEngineersView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RecordingEngineersViewModel}">
+            <views:RecordingEngineerView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -52,6 +55,9 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveMixingEngineerViewModel}">
             <views:SaveMixingEngineerView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveRecordingEngineerViewModel}">
+            <views:SaveRecordingEngineerView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>
@@ -63,7 +69,7 @@
             <Button Name="BtnComposers" Command="{Binding CmdSwitchView}" CommandParameter="Composers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnCreations" Command="{Binding CmdSwitchView}" CommandParameter="Creations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnMixingEngineers" Command="{Binding CmdSwitchView}" CommandParameter="MixingEngineers" Content="Mixing Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnRecordingEngineers" Content="Rec. Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnRecordingEngineers" Command="{Binding CmdSwitchView}" CommandParameter="RecordingEngineers" Content="Rec. Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnGenres" Content="Genres" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnOfficialVideos" Content="Official Videos" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnPerformances" Content="Performances" MinWidth="100" MaxWidth="138" Height="30"/>
