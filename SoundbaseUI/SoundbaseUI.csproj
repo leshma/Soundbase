@@ -69,6 +69,7 @@
     <Compile Include="ViewModels\ComposersViewModel.cs" />
     <Compile Include="ViewModels\CreationsViewModel.cs" />
     <Compile Include="ViewModels\GenericViewModel.cs" />
+    <Compile Include="ViewModels\GenresViewModel.cs" />
     <Compile Include="ViewModels\MixingEngineersViewModel.cs" />
     <Compile Include="ViewModels\RecordingEngineersViewModel.cs" />
     <Compile Include="ViewModels\SaveAlbumViewModel.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="ViewModels\SaveBandViewModel.cs" />
     <Compile Include="ViewModels\SaveComposerViewModel.cs" />
     <Compile Include="ViewModels\SaveCreationViewModel.cs" />
+    <Compile Include="ViewModels\SaveGenreViewModel.cs" />
     <Compile Include="ViewModels\SaveMixingEngineerViewModel.cs" />
     <Compile Include="ViewModels\SaveRecordingEngineerViewModel.cs" />
     <Compile Include="Views\AlbumsView.xaml.cs">
@@ -99,6 +101,9 @@
     </Compile>
     <Compile Include="Views\CreationsView.xaml.cs">
       <DependentUpon>CreationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GenresView.xaml.cs">
+      <DependentUpon>GenresView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MixingEngineersView.xaml.cs">
       <DependentUpon>MixingEngineersView.xaml</DependentUpon>
@@ -123,6 +128,9 @@
     </Compile>
     <Compile Include="Views\SaveCreationView.xaml.cs">
       <DependentUpon>SaveCreationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaveGenreView.xaml.cs">
+      <DependentUpon>SaveGenreView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SaveMixingEngineerView.xaml.cs">
       <DependentUpon>SaveMixingEngineerView.xaml</DependentUpon>
@@ -166,6 +174,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\GenresView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MixingEngineersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SaveCreationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaveGenreView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/25/2021 12:19:03
+-- Date Created: 06/25/2021 23:56:55
 -- Generated from EDMX file: C:\Users\Nemanja\Desktop\Marko\School\Baze 2\Projekat\Soundbase\Soundbase\ModelSoundbase.edmx
 -- --------------------------------------------------
 
@@ -190,8 +190,7 @@ GO
 CREATE TABLE [dbo].[GenreSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [GenreId] int  NOT NULL,
-    [GenreId1] int  NULL
+    [GenreId] int  NULL
 );
 GO
 
@@ -771,10 +770,10 @@ ON [dbo].[CreatedSet]
     ([AlbumId]);
 GO
 
--- Creating foreign key on [GenreId1] in table 'GenreSet'
+-- Creating foreign key on [GenreId] in table 'GenreSet'
 ALTER TABLE [dbo].[GenreSet]
 ADD CONSTRAINT [FK_GenreGenre]
-    FOREIGN KEY ([GenreId1])
+    FOREIGN KEY ([GenreId])
     REFERENCES [dbo].[GenreSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -783,7 +782,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_GenreGenre'
 CREATE INDEX [IX_FK_GenreGenre]
 ON [dbo].[GenreSet]
-    ([GenreId1]);
+    ([GenreId]);
 GO
 
 -- Creating foreign key on [Id] in table 'EngineerSet_RecordingEngineer'

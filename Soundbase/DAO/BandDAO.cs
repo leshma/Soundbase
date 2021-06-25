@@ -55,6 +55,16 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<Band> GetFullList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.BandSet
+                    .Include("Artists")
+                    .ToList();
+            }
+        }
+
         //==============================================================================================
         public override bool Insert(Band band)
         {

@@ -11,14 +11,14 @@ using System.Windows;
 
 namespace SoundbaseUI.ViewModels
 {
-    public class BandsViewModel : GenericViewModel<Band>
+    class GenresViewModel : GenericViewModel<Genre>
     {
-        public BandsViewModel() : base(new BandDAO())
+        public GenresViewModel() : base(new GenreDAO())
         {
             CmdSwitchView = new RelayCommand<string>(ChangeView);
             CmdRemoveSelected = new RelayCommand(RemoveSelected);
 
-            Elements = new ObservableCollection<Band>(((BandDAO)_DAO).GetFullList());
+            Elements = new ObservableCollection<Genre>(((GenreDAO)_DAO).GetFullList());
         }
 
         //================================================================================================
@@ -28,14 +28,14 @@ namespace SoundbaseUI.ViewModels
             {
                 case "addnew":
 
-                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveBandViewModel();
-                    MainWindow.MainWindowViewModel.Title = "Add a band";
+                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveGenreViewModel();
+                    MainWindow.MainWindowViewModel.Title = "Add a genre";
                     break;
 
                 case "updateselected":
 
-                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveBandViewModel(SelectedElement);
-                    MainWindow.MainWindowViewModel.Title = "Update a band (ID: " + SelectedElement.Id + ")";
+                    MainWindow.MainWindowViewModel.CurrentViewModel = new SaveGenreViewModel(SelectedElement);
+                    MainWindow.MainWindowViewModel.Title = "Update a genre (ID: " + SelectedElement.Id + ")";
                     break;
             }
         }
@@ -44,16 +44,16 @@ namespace SoundbaseUI.ViewModels
         {
             if (_DAO.Delete(SelectedElement.Id))
             {
-                MessageBox.Show("Band successfully deleted!", "Success", MessageBoxButton.OK,
+                MessageBox.Show("Genre successfully deleted!", "Success", MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("Band couldn't be deleted.", "Error", MessageBoxButton.OK,
+                MessageBox.Show("Genre couldn't be deleted.", "Error", MessageBoxButton.OK,
                     MessageBoxImage.Error);
             }
 
-            Elements = new ObservableCollection<Band>(((BandDAO)_DAO).GetFullList());
+            Elements = new ObservableCollection<Genre>(((GenreDAO)_DAO).GetFullList());
         }
     }
 }

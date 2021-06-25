@@ -118,8 +118,8 @@
       <End Role="Created" EntitySet="CreatedSet" />
     </AssociationSet>
     <AssociationSet Name="GenreGenre" Association="ModelSoundbase.Store.GenreGenre">
-      <End Role="SubgenreIds" EntitySet="GenreSet" />
-      <End Role="SupergenreId" EntitySet="GenreSet" />
+      <End Role="Genre" EntitySet="GenreSet" />
+      <End Role="Genre1" EntitySet="GenreSet" />
     </AssociationSet>
     <AssociationSet Name="FK_RecordingEngineer_inherits_Engineer" Association="ModelSoundbase.Store.FK_RecordingEngineer_inherits_Engineer">
       <End Role="Engineer" EntitySet="EngineerSet" />
@@ -151,8 +151,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="GenreId" Type="int" Nullable="false" />
-    <Property Name="GenreId1" Type="int" Nullable="true" />
+    <Property Name="GenreId" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="WriterSet">
     <Key>
@@ -383,14 +382,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="GenreGenre">
-    <End Role="SubgenreIds" Type="ModelSoundbase.Store.GenreSet" Multiplicity="0..1" />
-    <End Role="SupergenreId" Type="ModelSoundbase.Store.GenreSet" Multiplicity="*" />
+    <End Role="Genre" Type="ModelSoundbase.Store.GenreSet" Multiplicity="0..1" />
+    <End Role="Genre1" Type="ModelSoundbase.Store.GenreSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SubgenreIds">
+      <Principal Role="Genre">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="SupergenreId">
-        <PropertyRef Name="GenreId1" />
+      <Dependent Role="Genre1">
+        <PropertyRef Name="GenreId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -689,8 +688,8 @@
             <End Role="Created" EntitySet="CreatedSet" />
           </AssociationSet>
           <AssociationSet Name="GenreGenre" Association="ModelSoundbase.GenreGenre">
-            <End Role="SubgenreIds" EntitySet="GenreSet" />
-            <End Role="SupergenreId" EntitySet="GenreSet" />
+            <End Role="Genre" EntitySet="GenreSet" />
+            <End Role="Genre1" EntitySet="GenreSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Song">
@@ -726,10 +725,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <NavigationProperty Name="Songs" Relationship="ModelSoundbase.SongGenre" FromRole="Genre" ToRole="Song" />
-          <Property Name="GenreId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Subgenres" Relationship="ModelSoundbase.GenreGenre" FromRole="SubgenreIds" ToRole="SupergenreId" />
-          <NavigationProperty Name="Supergenre" Relationship="ModelSoundbase.GenreGenre" FromRole="SupergenreId" ToRole="SubgenreIds" />
-          <Property Name="GenreId1" Type="Int32" Nullable="true" />
+          <NavigationProperty Name="Subgenres" Relationship="ModelSoundbase.GenreGenre" FromRole="Genre" ToRole="Genre1" />
+          <NavigationProperty Name="Supergenre" Relationship="ModelSoundbase.GenreGenre" FromRole="Genre1" ToRole="Genre" />
+          <Property Name="GenreId" Type="Int32" Nullable="true" />
           </EntityType>
         <Association Name="SongGenre">
           <End Type="ModelSoundbase.Song" Role="Song" Multiplicity="*" />
@@ -920,14 +918,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="GenreGenre">
-          <End Type="ModelSoundbase.Genre" Role="SubgenreIds" Multiplicity="0..1" />
-          <End Type="ModelSoundbase.Genre" Role="SupergenreId" Multiplicity="*" />
+          <End Type="ModelSoundbase.Genre" Role="Genre" Multiplicity="0..1" />
+          <End Type="ModelSoundbase.Genre" Role="Genre1" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="SubgenreIds">
+            <Principal Role="Genre">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="SupergenreId">
-              <PropertyRef Name="GenreId1" />
+            <Dependent Role="Genre1">
+              <PropertyRef Name="GenreId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -960,7 +958,6 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="GenreId" ColumnName="GenreId" />
-          <ScalarProperty Name="GenreId1" ColumnName="GenreId1" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

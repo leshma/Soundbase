@@ -34,6 +34,9 @@
         <DataTemplate DataType="{x:Type viewmodels:RecordingEngineersViewModel}">
             <views:RecordingEngineerView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:GenresViewModel}">
+            <views:GenresView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -58,6 +61,9 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveRecordingEngineerViewModel}">
             <views:SaveRecordingEngineerView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveGenreViewModel}">
+            <views:SaveGenreView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>
@@ -70,12 +76,12 @@
             <Button Name="BtnCreations" Command="{Binding CmdSwitchView}" CommandParameter="Creations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnMixingEngineers" Command="{Binding CmdSwitchView}" CommandParameter="MixingEngineers" Content="Mixing Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnRecordingEngineers" Command="{Binding CmdSwitchView}" CommandParameter="RecordingEngineers" Content="Rec. Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnGenres" Content="Genres" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnOfficialVideos" Content="Official Videos" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnPerformances" Content="Performances" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnRecordLabels" Content="Record Labels" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnSongs" Content="Songs" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnWriters" Content="Writers" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnGenres" Command="{Binding CmdSwitchView}" CommandParameter="Genres" Content="Genres" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnOfficialVideos" Command="{Binding CmdSwitchView}" CommandParameter="OfficialVideos" Content="Official Videos" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnPerformances" Command="{Binding CmdSwitchView}" CommandParameter="Performances" Content="Performances" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnRecordLabels" Command="{Binding CmdSwitchView}" CommandParameter="RecordLabels" Content="Record Labels" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnSongs" Command="{Binding CmdSwitchView}" CommandParameter="Songs" Content="Songs" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnWriters" Command="{Binding CmdSwitchView}" CommandParameter="Writers" Content="Writers" MinWidth="100" MaxWidth="138" Height="30"/>
         </ListView>
         <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="187,10,0,0" Padding="10,5,0,0" VerticalAlignment="Top" Width="597" Height="42" FontSize="24" FontWeight="Bold"/>
     </Grid>

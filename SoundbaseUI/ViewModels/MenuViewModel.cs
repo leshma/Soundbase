@@ -88,6 +88,12 @@ namespace SoundbaseUI.ViewModels
                     CurrentViewModel = new RecordingEngineersViewModel();
                     Title = "Recording Engineers";
                     break;
+
+                case "genres":
+
+                    CurrentViewModel = new GenresViewModel();
+                    Title = "Genres";
+                    break;
             }
         }
 

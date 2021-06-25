@@ -42,6 +42,17 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<Genre> GetFullList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.GenreSet
+                    .Include("Subgenres")
+                    .Include("Supergenre")
+                    .ToList();
+            }
+        }
+
         public List<Song> GetSongsInGenre(int genreId)
         {
             using (var context = new ModelSoundbaseContainer())
@@ -75,6 +86,31 @@ namespace Soundbase.DAO
                     .SingleOrDefault(x => x.Id == genreId)
                     .Supergenre;
             }
+        }
+
+        //==============================================================================================
+        public override bool Insert(Genre genre)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                if (genre.Subgenres != null && genre.Subgenres.Count > 0)
+                {
+                    foreach (var subgenre in genre.Subgenres)
+                    {
+                        context.Entry(subgenre).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                }
+
+                if (genre.Supergenre != null)
+                {
+                    context.Entry(genre.Supergenre).State = System.Data.Entity.EntityState.Unchanged;
+                }
+
+                context.GenreSet.Add(genre);
+                context.SaveChanges();
+            }
+
+            return true;
         }
     }
 }
