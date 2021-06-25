@@ -65,6 +65,8 @@
     <Compile Include="Resources\BindableBase.cs" />
     <Compile Include="Resources\RelayCommand.cs" />
     <Compile Include="ViewModels\ArtworksViewModel.cs" />
+    <Compile Include="ViewModels\BandsViewModel.cs" />
+    <Compile Include="ViewModels\ComposersViewModel.cs" />
     <Compile Include="ViewModels\GenericViewModel.cs" />
     <Compile Include="ViewModels\SaveAlbumViewModel.cs" />
     <Compile Include="ViewModels\SaveArtistViewModel.cs" />
@@ -72,6 +74,8 @@
     <Compile Include="ViewModels\ArtistsViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\SaveArtworkViewModel.cs" />
+    <Compile Include="ViewModels\SaveBandViewModel.cs" />
+    <Compile Include="ViewModels\SaveComposerViewModel.cs" />
     <Compile Include="Views\AlbumsView.xaml.cs">
       <DependentUpon>AlbumsView.xaml</DependentUpon>
     </Compile>
@@ -81,6 +85,12 @@
     <Compile Include="Views\ArtworksView.xaml.cs">
       <DependentUpon>ArtworksView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\BandsView.xaml.cs">
+      <DependentUpon>BandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComposersView.xaml.cs">
+      <DependentUpon>ComposersView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SaveAlbumView.xaml.cs">
       <DependentUpon>SaveAlbumView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +99,12 @@
     </Compile>
     <Compile Include="Views\SaveArtworkView.xaml.cs">
       <DependentUpon>SaveArtworkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaveBandView.xaml.cs">
+      <DependentUpon>SaveBandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaveComposerView.xaml.cs">
+      <DependentUpon>SaveComposerView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -114,6 +130,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\BandsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComposersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SaveAlbumView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +147,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\SaveArtworkView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaveBandView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaveComposerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

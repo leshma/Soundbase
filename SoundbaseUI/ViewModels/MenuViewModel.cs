@@ -58,6 +58,18 @@ namespace SoundbaseUI.ViewModels
                     CurrentViewModel = new ArtworksViewModel();
                     Title = "Artworks";
                     break;
+
+                case "bands":
+
+                    CurrentViewModel = new BandsViewModel();
+                    Title = "Bands";
+                    break;
+
+                case "composers":
+
+                    CurrentViewModel = new ComposersViewModel();
+                    Title = "Composers";
+                    break;
             }
         }
 

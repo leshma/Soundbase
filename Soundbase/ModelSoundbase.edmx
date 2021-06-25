@@ -805,8 +805,10 @@
           <NavigationProperty Name="Bands" Relationship="ModelSoundbase.BandRecordLabel" FromRole="RecordLabel" ToRole="Band" />
         </EntityType>
         <Association Name="ArtistBand">
-          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="*" />
-          <End Type="ModelSoundbase.Band" Role="Band" Multiplicity="*" />
+          <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="*" >
+          </End>
+          <End Type="ModelSoundbase.Band" Role="Band" Multiplicity="*" >
+          </End>
         </Association>
         <Association Name="ArtistRecordLabel">
           <End Type="ModelSoundbase.Artist" Role="Artist" Multiplicity="*" />

@@ -10,6 +10,16 @@ namespace Soundbase.DAO
     public class BandDAO : GenericRepository<Band>
     {
         //==============================================================================================
+        public Band FindByIdFull(int id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.BandSet
+                    .Include("Artists")
+                    .Include("RecordLabels")
+                    .SingleOrDefault(x => x.Id == id);
+            }
+        }
         public List<Band> FindByName(string name)
         {
             using (var context = new ModelSoundbaseContainer())
@@ -53,7 +63,17 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            return base.Insert(band);
+            using (var context = new ModelSoundbaseContainer())
+            {
+                foreach (var artist in band.Artists)
+                {
+                    context.Entry(artist).State = System.Data.Entity.EntityState.Unchanged;
+                }
+                context.BandSet.Add(band);
+                context.SaveChanges();
+            }
+
+            return true;
         }
 
         //==============================================================================================

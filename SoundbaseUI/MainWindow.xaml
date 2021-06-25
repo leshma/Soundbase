@@ -8,7 +8,7 @@
         xmlns:viewmodels="clr-namespace:SoundbaseUI.ViewModels"
         xmlns:resources="clr-namespace:SoundbaseUI.Resources" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Soundbase" Height="450" Width="800">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewmodels:AlbumsViewModel}">
             <views:AlbumsView />
@@ -19,6 +19,12 @@
         <DataTemplate DataType="{x:Type viewmodels:ArtworksViewModel}">
             <views:ArtworksView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:BandsViewModel}">
+            <views:BandsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ComposersViewModel}">
+            <views:ComposersView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -28,6 +34,12 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveArtworkViewModel}">
             <views:SaveArtworkView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveBandViewModel}">
+            <views:SaveBandView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveComposerViewModel}">
+            <views:SaveComposerView />
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>
@@ -35,8 +47,8 @@
             <Button Name="BtnAlbums" Command="{Binding CmdSwitchView}" CommandParameter="Albums" Content="Albums" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtists" Command="{Binding CmdSwitchView}" CommandParameter="Artists" Content="Artists" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtworks" Command="{Binding CmdSwitchView}" CommandParameter="Artworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnBands" Content="Bands" MinWidth="100" MaxWidth="138" Height="30"/>
-            <Button Name="BtnComposers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnBands" Command="{Binding CmdSwitchView}" CommandParameter="Bands" Content="Bands" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnComposers" Command="{Binding CmdSwitchView}" CommandParameter="Composers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnCreations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnEngineers" Content="Engineers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnGenres" Content="Genres" MinWidth="100" MaxWidth="138" Height="30"/>
