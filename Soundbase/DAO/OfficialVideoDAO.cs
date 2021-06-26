@@ -40,7 +40,14 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            return base.Insert(officialVideo);
+            using (var context = new ModelSoundbaseContainer())
+            {
+                context.Entry(officialVideo.Song).State = System.Data.Entity.EntityState.Unchanged;
+                context.OfficialVideoSet.Add(officialVideo);
+                context.SaveChanges();
+            }
+
+            return true;
         }
     }
 }

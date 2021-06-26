@@ -55,6 +55,21 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<Song> GetFullList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.SongSet
+                    .Include("Composers")
+                    .Include("Genres")
+                    .Include("Writers")
+                    .Include("OfficialVideo")
+                    .Include("Engineers")
+                    .Include("Performed")
+                    .ToList();
+            }
+        }
+
         //==========================================================================================
         public override bool Insert(Song song)
         {
