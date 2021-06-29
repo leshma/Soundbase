@@ -43,6 +43,12 @@
         <DataTemplate DataType="{x:Type viewmodels:PerformancesViewModel}">
             <views:PerformancesView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:RecordLabelsViewModel}">
+            <views:RecordLabelsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:WritersViewModel}">
+            <views:WritersView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -75,6 +81,12 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SavePerformanceViewModel}">
             <views:SavePerformanceView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveRecordLabelViewModel}">
+            <views:SaveRecordLabelView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveWriterViewModel}">
+            <views:SaveWriterView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
