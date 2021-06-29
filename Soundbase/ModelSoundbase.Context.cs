@@ -12,6 +12,8 @@ namespace Soundbase
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class ModelSoundbaseContainer : DbContext
     {
@@ -38,5 +40,14 @@ namespace Soundbase
         public virtual DbSet<Album> AlbumSet { get; set; }
         public virtual DbSet<Created> CreatedSet { get; set; }
         public virtual DbSet<Performed> PerformedSet { get; set; }
+    
+        public virtual ObjectResult<GetArtworksWithSameFormat_Result1> GetArtworksWithSameFormat(string format)
+        {
+            var formatParameter = format != null ?
+                new ObjectParameter("Format", format) :
+                new ObjectParameter("Format", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetArtworksWithSameFormat_Result1>("GetArtworksWithSameFormat", formatParameter);
+        }
     }
 }

@@ -89,6 +89,12 @@
     <Compile Include="Genre.cs">
       <DependentUpon>ModelSoundbase.tt</DependentUpon>
     </Compile>
+    <Compile Include="GetArtworksWithSameFormat_Result.cs">
+      <DependentUpon>ModelSoundbase.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetArtworksWithSameFormat_Result1.cs">
+      <DependentUpon>ModelSoundbase.tt</DependentUpon>
+    </Compile>
     <Compile Include="MixingEngineer.cs">
       <DependentUpon>ModelSoundbase.tt</DependentUpon>
     </Compile>

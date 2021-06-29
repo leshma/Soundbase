@@ -64,6 +64,7 @@
     </ApplicationDefinition>
     <Compile Include="Resources\BindableBase.cs" />
     <Compile Include="Resources\RelayCommand.cs" />
+    <Compile Include="ViewModels\ArtworksProcedureViewModel.cs" />
     <Compile Include="ViewModels\ArtworksViewModel.cs" />
     <Compile Include="ViewModels\BandsViewModel.cs" />
     <Compile Include="ViewModels\ComposersViewModel.cs" />
@@ -99,6 +100,9 @@
     </Compile>
     <Compile Include="Views\ArtistsView.xaml.cs">
       <DependentUpon>ArtistsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ArtworksProcedureView.xaml.cs">
+      <DependentUpon>ArtworksProcedureView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ArtworksView.xaml.cs">
       <DependentUpon>ArtworksView.xaml</DependentUpon>
@@ -195,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ArtistsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ArtworksProcedureView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

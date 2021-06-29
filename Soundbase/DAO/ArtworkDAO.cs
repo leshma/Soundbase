@@ -57,6 +57,14 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<GetArtworksWithSameFormat_Result1> GetArtworksWithSameFormat(string format)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.GetArtworksWithSameFormat(format).ToList();
+            }
+        }
+
         //==============================================================================================
         public override bool Insert(Artwork artwork)
         {

@@ -19,6 +19,9 @@
         <DataTemplate DataType="{x:Type viewmodels:ArtworksViewModel}">
             <views:ArtworksView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:ArtworksProcedureViewModel}">
+            <views:ArtworksProcedureView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:BandsViewModel}">
             <views:BandsView />
         </DataTemplate>
@@ -105,6 +108,7 @@
             <Button Name="BtnAlbums" Command="{Binding CmdSwitchView}" CommandParameter="Albums" Content="Albums" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtists" Command="{Binding CmdSwitchView}" CommandParameter="Artists" Content="Artists" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtworks" Command="{Binding CmdSwitchView}" CommandParameter="Artworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
+            <Button Name="BtnArtworksProcedure" Command="{Binding CmdSwitchView}" CommandParameter="ArtworksProcedure" Content="Artworks Procedure" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnBands" Command="{Binding CmdSwitchView}" CommandParameter="Bands" Content="Bands" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnComposers" Command="{Binding CmdSwitchView}" CommandParameter="Composers" Content="Composers" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnCreations" Command="{Binding CmdSwitchView}" CommandParameter="Creations" Content="Creations" MinWidth="100" MaxWidth="138" Height="30"/>
