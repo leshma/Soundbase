@@ -10,6 +10,21 @@ namespace Soundbase.DAO
     public class ComposerDAO : GenericRepository<Composer>
     {
         //==============================================================================================
+        public override bool Delete(object id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                var composers = context.ComposerSet
+                    .Include("Songs")
+                    .SingleOrDefault(x => x.Id == (int)id);
+
+                context.Entry(composers).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+        //==============================================================================================
         public List<Composer> FindByName(string name)
         {
             using (var context = new ModelSoundbaseContainer())

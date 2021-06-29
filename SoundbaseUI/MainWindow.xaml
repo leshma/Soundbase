@@ -8,7 +8,7 @@
         xmlns:viewmodels="clr-namespace:SoundbaseUI.ViewModels"
         xmlns:resources="clr-namespace:SoundbaseUI.Resources" 
         mc:Ignorable="d"
-        Title="Soundbase" Height="450" Width="800">
+        Title="Soundbase" Height="800" Width="1000" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewmodels:AlbumsViewModel}">
             <views:AlbumsView />
@@ -45,6 +45,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:RecordLabelsViewModel}">
             <views:RecordLabelsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SongsViewModel}">
+            <views:SongsView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:WritersViewModel}">
             <views:WritersView />
@@ -85,13 +88,20 @@
         <DataTemplate DataType="{x:Type viewmodels:SaveRecordLabelViewModel}">
             <views:SaveRecordLabelView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SaveSongViewModel}">
+            <views:SaveSongView/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveWriterViewModel}">
             <views:SaveWriterView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ContentControl Content="{Binding CurrentViewModel}" Margin="187,57,9.6,0" VerticalAlignment="Top" Height="353" RenderTransformOrigin="0.5,0.5"/>
-        <ListView HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Width="172" Padding="10" Grid.RowSpan="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ContentControl Grid.Row="0" Grid.Column="1" Content="{Binding CurrentViewModel}" Width="750" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Height="600"/>
+        <ListView Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Width="172" Padding="10" Grid.RowSpan="2">
             <Button Name="BtnAlbums" Command="{Binding CmdSwitchView}" CommandParameter="Albums" Content="Albums" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtists" Command="{Binding CmdSwitchView}" CommandParameter="Artists" Content="Artists" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnArtworks" Command="{Binding CmdSwitchView}" CommandParameter="Artworks" Content="Artworks" MinWidth="100" MaxWidth="138" Height="30"/>
@@ -107,6 +117,6 @@
             <Button Name="BtnSongs" Command="{Binding CmdSwitchView}" CommandParameter="Songs" Content="Songs" MinWidth="100" MaxWidth="138" Height="30"/>
             <Button Name="BtnWriters" Command="{Binding CmdSwitchView}" CommandParameter="Writers" Content="Writers" MinWidth="100" MaxWidth="138" Height="30"/>
         </ListView>
-        <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="187,10,0,0" Padding="10,5,0,0" VerticalAlignment="Top" Width="597" Height="42" FontSize="24" FontWeight="Bold"/>
+        <Label Content="{Binding Title}" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="750" Height="100" FontSize="24" FontWeight="Bold"/>
     </Grid>
 </Window>

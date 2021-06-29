@@ -15,19 +15,15 @@ namespace Soundbase.DAO
             using (var context = new ModelSoundbaseContainer())
             {
                 var genre = context.GenreSet
-                    .Include("Songs.Genres")
+                    .Include("Songs")
+                    .Include("Supergenre")
+                    .Include("Subgenres")
                     .SingleOrDefault(x => x.Id == (int)id);
 
-                foreach (var song in genre.Songs)
-                {
-                    if (song.Genres.Count == 1)
-                    {
-                        return false;
-                    }
-                }
+                context.Entry(genre).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
             }
-
-            return base.Delete(id);
         }
 
         //==============================================================================================

@@ -10,6 +10,21 @@ namespace Soundbase.DAO
     public class ArtworkDAO : GenericRepository<Artwork>
     {
         //==============================================================================================
+        public override bool Delete(object id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                var artwork = context.ArtworkSet
+                    .Include("Album")
+                    .SingleOrDefault(x => x.Id == (int)id);
+
+                context.Entry(artwork).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+        //==============================================================================================
         public List<Artwork> FindByArtworkArtistName(string artworkArtistName)
         {
             using (var context = new ModelSoundbaseContainer())

@@ -90,7 +90,9 @@
     <Compile Include="ViewModels\SavePerformanceViewModel.cs" />
     <Compile Include="ViewModels\SaveRecordingEngineerViewModel.cs" />
     <Compile Include="ViewModels\SaveRecordLabelViewModel.cs" />
+    <Compile Include="ViewModels\SaveSongViewModel.cs" />
     <Compile Include="ViewModels\SaveWriterViewModel.cs" />
+    <Compile Include="ViewModels\SongsViewModel.cs" />
     <Compile Include="ViewModels\WritersViewModel.cs" />
     <Compile Include="Views\AlbumsView.xaml.cs">
       <DependentUpon>AlbumsView.xaml</DependentUpon>
@@ -164,8 +166,14 @@
     <Compile Include="Views\SaveRecordLabelView.xaml.cs">
       <DependentUpon>SaveRecordLabelView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SaveSongView.xaml.cs">
+      <DependentUpon>SaveSongView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SaveWriterView.xaml.cs">
       <DependentUpon>SaveWriterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SongsView.xaml.cs">
+      <DependentUpon>SongsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WritersView.xaml.cs">
       <DependentUpon>WritersView.xaml</DependentUpon>
@@ -278,7 +286,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SaveSongView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SaveWriterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SongsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

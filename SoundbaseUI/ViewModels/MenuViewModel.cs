@@ -113,6 +113,12 @@ namespace SoundbaseUI.ViewModels
                     Title = "Record labels";
                     break;
 
+                case "songs":
+
+                    CurrentViewModel = new SongsViewModel();
+                    Title = "Songs";
+                    break;
+
                 case "writers":
 
                     CurrentViewModel = new WritersViewModel();

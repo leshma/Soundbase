@@ -17,20 +17,16 @@ namespace Soundbase.DAO
                 var song = context.SongSet
                     .Include("OfficialVideo")
                     .Include("Performed")
+                    .Include("Composers")
+                    .Include("Genres")
+                    .Include("Engineers")
+                    .Include("Writers")
                     .SingleOrDefault(x => x.Id == (int)id);
 
-                if (song.Performed.Count > 0)
-                {
-                    return false;
-                }
-
-                if (song.OfficialVideo != null)
-                {
-                    return false;
-                }
+                context.Entry(song).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
             }
-            
-            return base.Delete(id);
         }
 
         //==========================================================================================
@@ -78,12 +74,45 @@ namespace Soundbase.DAO
                 return false;
             }
 
-            //if (song.Performed == null || song.Performed.Count == 0)
-            //{
-            //    return false;
-            //}
+            using (var context = new ModelSoundbaseContainer())
+            {
+                if (song.Composers != null && song.Composers.Count > 0)
+                {
+                    foreach (var item in song.Composers)
+                    {
+                        context.Entry(item).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                }
 
-            return base.Insert(song);
+                if (song.Engineers != null && song.Engineers.Count > 0)
+                {
+                    foreach (var item in song.Engineers)
+                    {
+                        context.Entry(item).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                }
+
+                if (song.Writers != null && song.Writers.Count > 0)
+                {
+                    foreach (var item in song.Writers)
+                    {
+                        context.Entry(item).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                }
+
+                if (song.Genres != null && song.Genres.Count > 0)
+                {
+                    foreach (var item in song.Genres)
+                    {
+                        context.Entry(item).State = System.Data.Entity.EntityState.Unchanged;
+                    }
+                }
+
+                context.SongSet.Add(song);
+                context.SaveChanges();
+            }
+
+            return true;
         }
     }
 }

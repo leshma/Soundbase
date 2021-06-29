@@ -20,22 +20,10 @@ namespace Soundbase.DAO
                     .Include("Performed")
                     .SingleOrDefault(x => x.Id == (int)id);
 
-                foreach (var band in artist.Bands)
-                {
-                    if (band.Artists.Count == 1)
-                    {
-                        return false;
-                    }
-                }
-
-                if (artist.Created.Count > 0)
-                    return false;
-
-                if (artist.Performed.Count > 0)
-                    return false;
+                context.Entry(artist).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
             }
-
-            return base.Delete(id);
         }
 
         //==============================================================================================

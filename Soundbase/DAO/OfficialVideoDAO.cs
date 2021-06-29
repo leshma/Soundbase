@@ -10,6 +10,21 @@ namespace Soundbase.DAO
     public class OfficialVideoDAO : GenericRepository<OfficialVideo>
     {
         //==============================================================================================
+        public override bool Delete(object id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                var officialVideo = context.OfficialVideoSet
+                    .Include("Song")
+                    .SingleOrDefault(x => x.Id == (int)id);
+
+                context.Entry(officialVideo).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+        //==============================================================================================
         public List<OfficialVideo> FindByName(string name)
         {
             using (var context = new ModelSoundbaseContainer())

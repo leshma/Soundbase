@@ -10,6 +10,22 @@ namespace Soundbase.DAO
     public class BandDAO : GenericRepository<Band>
     {
         //==============================================================================================
+        public override bool Delete(object id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                var band = context.BandSet
+                    .Include("Artists")
+                    .Include("RecordLabels")
+                    .SingleOrDefault(x => x.Id == (int)id);
+
+                context.Entry(band).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+        //==============================================================================================
         public Band FindByIdFull(int id)
         {
             using (var context = new ModelSoundbaseContainer())

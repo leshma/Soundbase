@@ -15,25 +15,15 @@ namespace Soundbase.DAO
             using (var context = new ModelSoundbaseContainer())
             {
                 var performed = context.PerformedSet
-                    .Include("Song.Performed")
-                    .Include("Created.Performed")
+                    .Include("Song")
+                    .Include("Artist")
+                    .Include("Created")
                     .SingleOrDefault(x => x.Id == (int)id);
 
-                foreach (var created in performed.Created)
-                {
-                    if (created.Performed.Count == 1)
-                    {
-                        return false;
-                    }
-                }
-
-                if (performed.Song.Performed.Count == 1)
-                {
-                    return false;
-                }
+                context.Entry(performed).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
             }
-            
-            return base.Delete(id);
         }
 
         //==========================================================================================

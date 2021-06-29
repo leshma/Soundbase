@@ -10,6 +10,21 @@ namespace Soundbase.DAO
     public class EngineerDAO : GenericRepository<Engineer>
     {
         //==============================================================================================
+        public override bool Delete(object id)
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                var engineer = context.EngineerSet
+                    .Include("Songs")
+                    .SingleOrDefault(x => x.Id == (int)id);
+
+                context.Entry(engineer).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
+        }
+
+        //==============================================================================================
         public List<Engineer> FindByName(string name)
         {
             using (var context = new ModelSoundbaseContainer())

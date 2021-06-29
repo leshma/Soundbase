@@ -24,9 +24,11 @@ namespace Soundbase.DAO
 
                 if (album.Created.Count > 0)
                     return false;
-            }
 
-            return base.Delete(id);
+                context.Entry(album).State = System.Data.Entity.EntityState.Deleted;
+                context.SaveChanges();
+                return true;
+            }
         }
 
         //==============================================================================================
