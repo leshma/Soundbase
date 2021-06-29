@@ -100,6 +100,12 @@ namespace SoundbaseUI.ViewModels
                     CurrentViewModel = new OfficialVideosViewModel();
                     Title = "Official videos";
                     break;
+
+                case "performances":
+
+                    CurrentViewModel = new PerformancesViewModel();
+                    Title = "Performances";
+                    break;
             }
         }
 

@@ -40,6 +40,9 @@
         <DataTemplate DataType="{x:Type viewmodels:OfficialVideosViewModel}">
             <views:OfficialVideosView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PerformancesViewModel}">
+            <views:PerformancesView />
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveAlbumViewModel}">
             <views:SaveAlbumView />
         </DataTemplate>
@@ -69,6 +72,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewmodels:SaveOfficialVideoViewModel}">
             <views:SaveOfficialVideoView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SavePerformanceViewModel}">
+            <views:SavePerformanceView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
