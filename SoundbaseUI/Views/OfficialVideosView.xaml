@@ -26,7 +26,14 @@
                 <DataGridTextColumn Header="ID" Width="0.2*"  Binding="{Binding Id}" />
                 <DataGridTextColumn Header="Name" Width="*" Binding="{Binding Name}" />
                 <DataGridTextColumn Header="Format" Width="*" Binding="{Binding Format}" />
-                <DataGridTextColumn Header="Song" Width="*" Binding="{Binding Song.Name}" />
+                <DataGridTemplateColumn Header="Song" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Song.Name}">
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Grid.Row="5" Grid.Column="0" Margin="20,5,20,5"

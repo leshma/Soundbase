@@ -47,6 +47,16 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<OfficialVideo> GetFullList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.OfficialVideoSet
+                    .Include("Song")
+                    .ToList();
+            }
+        }
+
         //==============================================================================================
         public override bool Insert(OfficialVideo officialVideo)
         {

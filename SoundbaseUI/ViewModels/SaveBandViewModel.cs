@@ -23,7 +23,7 @@ namespace SoundbaseUI.ViewModels
 
             Band = new Band();
             Operation = "Add";
-            Artists = _artistDAO.GetList();
+            Artists = _artistDAO.GetFullList();
             SelectedArtists = new List<Artist>();
         }
 
@@ -37,7 +37,7 @@ namespace SoundbaseUI.ViewModels
 
             Band = b;
             Operation = "Update";
-            Artists = _artistDAO.GetList();
+            Artists = _artistDAO.GetFullList();
             SelectedArtists = new List<Artist>();
         }
 

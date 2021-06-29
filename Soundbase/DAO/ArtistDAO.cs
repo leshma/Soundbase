@@ -38,6 +38,18 @@ namespace Soundbase.DAO
             }
         }
 
+        public List<Artist> GetFullList()
+        {
+            using (var context = new ModelSoundbaseContainer())
+            {
+                return context.ArtistSet
+                    .Include("Bands.Artists")
+                    .Include("Created")
+                    .Include("Performed")
+                    .ToList();
+            }
+        }
+        
         public List<Song> GetArtistSongs(int artistId)
         {
             using (var context = new ModelSoundbaseContainer())

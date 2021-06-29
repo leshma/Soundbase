@@ -45,6 +45,12 @@ namespace SoundbaseUI.ViewModels
             _composerDAO = new ComposerDAO();
 
             Song = c;
+
+            Engineers = _engineerDAO.GetList();
+            Writers = _writerDAO.GetList();
+            Genres = _genreDAO.GetList();
+            Composers = _composerDAO.GetList();
+
             Operation = "Update";
         }
 

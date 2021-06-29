@@ -17,6 +17,8 @@ namespace SoundbaseUI.ViewModels
         {
             CmdSwitchView = new RelayCommand<string>(ChangeView);
             CmdRemoveSelected = new RelayCommand(RemoveSelected);
+
+            Elements = new ObservableCollection<OfficialVideo>(((OfficialVideoDAO)_DAO).GetFullList());
         }
 
         //================================================================================================
@@ -51,7 +53,7 @@ namespace SoundbaseUI.ViewModels
                     MessageBoxImage.Error);
             }
 
-            Elements = new ObservableCollection<OfficialVideo>(_DAO.GetList());
+            Elements = new ObservableCollection<OfficialVideo>(((OfficialVideoDAO)_DAO).GetFullList());
         }
     }
 }

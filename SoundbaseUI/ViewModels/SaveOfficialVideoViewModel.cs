@@ -39,6 +39,8 @@ namespace SoundbaseUI.ViewModels
             _songDAO = new SongDAO();
 
             OfficialVideo = a;
+            Songs = new ObservableCollection<Song>(_songDAO.GetFullList());
+
             Operation = "Update";
         }
 
